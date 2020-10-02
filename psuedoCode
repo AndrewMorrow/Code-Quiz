@@ -10,5 +10,10 @@ the timer stops once all the questions are answered or the timer is out
 
 The high score can equal how much the timer has left
 
-when the game ends it will take initials to store high scores
+when the game ends it will take initials to save high scores
 
+make an input section for them to enter their name on high scores page
+
+create a button with an onClick even to save their highScore
+
+create a button to href to the index.html to play again
