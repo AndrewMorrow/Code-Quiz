@@ -8,6 +8,7 @@ const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answer-buttons");
 const timerElement = document.getElementById("timer-nav");
+var questionNumber = document.getElementById("question-number");
 
 const quizQuestions = [
     {
@@ -77,11 +78,39 @@ function displayCurrentQuestion(question) {
 
         return window.location.assign("/highScore.html");
     }
-
+    // sets the question text in the HTML
     questionElement.innerText = question.question;
+    currentQuestionIndex++;
+    // displays question number at the top
+    questionNumber.textContent = `Question ${currentQuestionIndex} of ${randomizeQuestions.length}`;
+    // this creates a button element for each answer
     question.answers.forEach((answer) => {
         const button = document.createElement("button");
         button.innerText = answer.text;
         button.classList.add("btn, btn-primary, btn-lg, mr-2, mb-2");
+        // sets the dataset for the button if its the correct answer
+        if (answer.correctAnswer) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", answerSelect);
+        answerButtonsElement.appendChild(button);
     });
+}
+
+function answerSelect(e) {
+    const selectedAnswer = e.target;
+    correct = selectedAnswer.dataset.correct;
+}
+
+// call this to remove the set class
+function resetClass() {
+    setTimeout(function () {
+        // remove the correct or incorrect class
+        // call displayCurrentQuestion
+
+        // this loops until all button children are removed
+        while (answerButtonsElement.firstChild) {
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        }
+    }, 800);
 }
