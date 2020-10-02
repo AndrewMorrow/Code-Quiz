@@ -74,11 +74,8 @@ function startQuiz() {
 
 function displayCurrentQuestion(question) {
     // this checks to see if the quiz is over and then stores the current score in mostRecentScore value
-    if (
-        randomizeQuestions.length === 0 ||
-        currentQuestionIndex + 1 >= randomizeQuestions.length
-    ) {
-        localStorage.setItem("mostRecentScore", score);
+    if (timeLeft <= 0 || currentQuestionIndex >= randomizeQuestions.length) {
+        localStorage.setItem("highScore", timeLeft);
 
         return window.location.assign("/highScore.html");
     }
@@ -141,4 +138,15 @@ function classToApply(element, correct) {
 
 function setTimeClock() {
     // set interval for timer
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = "Timer " + "00:" + timeLeft;
+        if (timeLeft < 10) {
+            timerElement.textContent = "Timer " + "00:" + "0" + timeLeft;
+        }
+        if (timeLeft <= 0) {
+            timerElement.textContent = "Timer " + "00:00";
+            clearInterval(timerInterval);
+        }
+    }, 1000);
 }
