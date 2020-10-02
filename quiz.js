@@ -71,6 +71,13 @@ function startQuiz() {
 }
 
 function displayCurrentQuestion(question) {
+    // this checks to see if the quiz is over and then stores the current score in mostRecentScore value
+    if (randomizeQuestions.length === 0 || questionsCounter > maxQuestions) {
+        localStorage.setItem("mostRecentScore", score);
+
+        return window.location.assign("/highScore.html");
+    }
+
     questionElement.innerText = question.question;
     question.answers.forEach((answer) => {
         const button = document.createElement("button");
