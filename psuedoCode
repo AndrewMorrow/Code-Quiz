@@ -1,0 +1,14 @@
+visual layout that has a start button
+
+store a high score variable to update
+
+timer that counts down and updates when a question is answered incorrectly
+
+present user with a series of questions that are multiple choice
+
+the timer stops once all the questions are answered or the timer is out
+
+The high score can equal how much the timer has left
+
+when the game ends it will take initials to store high scores
+
