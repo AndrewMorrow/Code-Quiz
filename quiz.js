@@ -69,11 +69,15 @@ function startQuiz() {
     randomizeQuestions = quizQuestions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     displayCurrentQuestion(randomizeQuestions[currentQuestionIndex]);
+    setTimeClock();
 }
 
 function displayCurrentQuestion(question) {
     // this checks to see if the quiz is over and then stores the current score in mostRecentScore value
-    if (randomizeQuestions.length === 0 || questionsCounter > maxQuestions) {
+    if (
+        randomizeQuestions.length === 0 ||
+        currentQuestionIndex + 1 >= randomizeQuestions.length
+    ) {
         localStorage.setItem("mostRecentScore", score);
 
         return window.location.assign("/highScore.html");
@@ -87,11 +91,12 @@ function displayCurrentQuestion(question) {
     question.answers.forEach((answer) => {
         const button = document.createElement("button");
         button.innerText = answer.text;
-        button.classList.add("btn, btn-primary, btn-lg, mr-2, mb-2");
+        button.classList.add("btn", "btn-primary", "btn-lg", "mr-2", "mb-2");
         // sets the dataset for the button if its the correct answer
         if (answer.correctAnswer) {
             button.dataset.correct = answer.correct;
         }
+        // targets button and sends to answerSelect function
         button.addEventListener("click", answerSelect);
         answerButtonsElement.appendChild(button);
     });
@@ -99,18 +104,41 @@ function displayCurrentQuestion(question) {
 
 function answerSelect(e) {
     const selectedAnswer = e.target;
+    // this will set correct to true or false
     correct = selectedAnswer.dataset.correct;
+    classToApply(document.body, correct);
+    Array.from(answerButtonsElement.children).forEach((button) => {
+        classToApply(button, button.dataset.correct);
+    });
+    if (!correct) {
+        timeLeft -= 5;
+    }
+    resetClass();
 }
 
 // call this to remove the set class
 function resetClass() {
     setTimeout(function () {
         // remove the correct or incorrect class
-        // call displayCurrentQuestion
 
         // this loops until all button children are removed
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
+        // call displayCurrentQuestion
+        displayCurrentQuestion(randomizeQuestions[currentQuestionIndex]);
     }, 800);
+}
+
+function classToApply(element, correct) {
+    // take and element in and set classes based on true or false
+    if (correct) {
+        element.classList.add("correct");
+    } else {
+        element.classList.add("incorrect");
+    }
+}
+
+function setTimeClock() {
+    // set interval for timer
 }
