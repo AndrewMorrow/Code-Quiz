@@ -75,7 +75,7 @@ function startQuiz() {
 function displayCurrentQuestion(question) {
     // this checks to see if the quiz is over and then stores the current score in mostRecentScore value
     if (timeLeft <= 0 || currentQuestionIndex >= randomizeQuestions.length) {
-        localStorage.setItem("highScore", timeLeft);
+        localStorage.setItem("currentScore", timeLeft);
 
         return window.location.assign("/highScore.html");
     }
@@ -116,8 +116,6 @@ function answerSelect(e) {
 // call this to remove the set class
 function resetClass() {
     setTimeout(function () {
-        // remove the correct or incorrect class
-
         // this loops until all button children are removed
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
@@ -128,12 +126,18 @@ function resetClass() {
 }
 
 function classToApply(element, correct) {
+    clearClass(element);
     // take and element in and set classes based on true or false
     if (correct) {
         element.classList.add("correct");
     } else {
         element.classList.add("incorrect");
     }
+}
+function clearClass(element) {
+    // remove the correct or incorrect class
+    element.classList.remove("correct");
+    element.classList.remove("incorrect");
 }
 
 function setTimeClock() {

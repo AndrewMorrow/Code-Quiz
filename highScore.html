@@ -16,10 +16,30 @@
         />
         <link rel="highScoreStyles.css" />
 
-        <title></title>
+        <title>Highscores</title>
     </head>
 
     <body>
+        <div class="nav-container mb-5">
+            <nav class="navbar fixed-top navbar-light bg-light">
+                <a class="navbar-brand" href="quiz.html">Play Again</a>
+            </nav>
+        </div>
+
+        <div class="container-wrap">
+            <main>
+                <section class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="jumbotron text-center">
+                            <h2>Highscores</h2>
+                            <hr class="my-4" />
+                            <div id="score-container"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
         <!-- jQuery CDN -->
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
