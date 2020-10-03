@@ -78,7 +78,7 @@ function displayCurrentQuestion(question) {
         score = timeLeft;
         localStorage.setItem("currentScore", score);
 
-        return window.location.assign("/scoreSave.html");
+        return window.location.assign("scoreSave.html");
     }
     // sets the question text in the HTML
     questionElement.innerText = question.question;
