@@ -3,7 +3,7 @@ var timeLeft = 50;
 var timerInterval;
 var correct;
 var randomizeQuestions, currentQuestionIndex;
-
+var score;
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answer-buttons");
@@ -75,9 +75,10 @@ function startQuiz() {
 function displayCurrentQuestion(question) {
     // this checks to see if the quiz is over and then stores the current score in mostRecentScore value
     if (timeLeft <= 0 || currentQuestionIndex >= randomizeQuestions.length) {
-        localStorage.setItem("currentScore", timeLeft);
+        score = timeLeft;
+        localStorage.setItem("currentScore", score);
 
-        return window.location.assign("/highScore.html");
+        return window.location.assign("/scoreSave.html");
     }
     // sets the question text in the HTML
     questionElement.innerText = question.question;
@@ -120,14 +121,15 @@ function resetClass() {
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
+        clearClass(document.body);
         // call displayCurrentQuestion
         displayCurrentQuestion(randomizeQuestions[currentQuestionIndex]);
-    }, 800);
+    }, 1000);
 }
 
 function classToApply(element, correct) {
-    clearClass(element);
     // take and element in and set classes based on true or false
+
     if (correct) {
         element.classList.add("correct");
     } else {
