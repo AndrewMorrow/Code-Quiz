@@ -1,13 +1,13 @@
 /* ------  Global Styles ------ */
 :root {
-    --backgroundColor-default: #648381;
-    --backgroundColor-incorrect: red;
-    --backgroundColor-correct: green;
+    --backgroundColor-default: #50514f;
+    --backgroundColor-incorrect: #e71d36;
+    --backgroundColor-correct: #399e5a;
 }
 body {
     --backgroundColor: var(--backgroundColor-default);
     background-color: var(--backgroundColor-default);
-    background-color: aquamarine;
+    background-color: #524948;
 }
 body.correct {
     background-color: var(--backgroundColor-correct);
