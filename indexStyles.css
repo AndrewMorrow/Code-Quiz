@@ -1,9 +1,14 @@
 /* ------  Global Styles ------ */
+nav {
+    background-color: #d4d0c4;
+}
+
 body {
     background-color: #50514f;
 }
+
 .jumbotron {
-    background-color: #dbd3c9;
+    background-color: #d4d0c4;
 }
 .btn:hover {
     border-color: black;

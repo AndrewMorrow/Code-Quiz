@@ -4,10 +4,13 @@
     --backgroundColor-incorrect: #e71d36;
     --backgroundColor-correct: #399e5a;
 }
+nav {
+    background-color: #d4d0c4;
+}
 body {
     --backgroundColor: var(--backgroundColor-default);
     background-color: var(--backgroundColor-default);
-    background-color: #524948;
+    background-color: #50514f;
 }
 body.correct {
     background-color: var(--backgroundColor-correct);
@@ -16,6 +19,9 @@ body.incorrect {
     background-color: var(--backgroundColor-incorrect);
 }
 
+.jumbotron {
+    background-color: #d4d0c4;
+}
 .btn:hover {
     border-color: black;
 }

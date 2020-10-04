@@ -31,7 +31,7 @@ const quizQuestions = [
                 text: "MongoDB, Express, React.js, Node.js",
                 correctAnswer: true,
             },
-            { text: "MongoDB, EsLint, Redux, Nim", correctAnswer: false },
+            { text: "MongoDB, EsLint, RequireJS, nginx", correctAnswer: false },
         ],
     },
     {
