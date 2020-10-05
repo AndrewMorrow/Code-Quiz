@@ -35,7 +35,7 @@ const quizQuestions = [
         ],
     },
     {
-        question: "What is the state a button is in right after it is clicked",
+        question: "What is the state a button is in when it is clicked",
         answers: [
             { text: "hover", correctAnswer: false },
             { text: "active", correctAnswer: true },
