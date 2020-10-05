@@ -5,6 +5,9 @@ nav {
 body {
     background-color: #50514f;
 }
+.jumbotron {
+    background-color: #d4d0c4;
+}
 .footer {
     position: fixed;
     bottom: 0;

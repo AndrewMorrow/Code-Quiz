@@ -14,6 +14,7 @@
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossorigin="anonymous"
         />
+        <!-- css stylesheet -->
         <link rel="stylesheet" href="scoreSave.css" />
 
         <title>User Score</title>
@@ -21,19 +22,21 @@
 
     <body class="pt-5">
         <div class="nav-container mb-5">
-            <nav class="navbar fixed-top navbar-light bg-light">
+            <nav class="navbar fixed-top navbar-light">
                 <a class="navbar-brand" href="quiz.html">Play Again</a>
             </nav>
         </div>
-
+        <!-- container to wrap content -->
         <div class="container-wrap">
             <main>
                 <section class="row">
                     <div class="col d-flex justify-content-center">
+                        <!-- start jumbotron -->
                         <div class="jumbotron text-center">
                             <h1 id="current-score"></h1>
                             <h2 id="final-score"></h2>
                             <hr class="my-4" />
+                            <!-- this is the input field and button to save score -->
                             <form id="score-container">
                                 <input
                                     type="text"
@@ -52,11 +55,12 @@
                                 </button>
                             </form>
                         </div>
+                        <!-- end jumbotron -->
                     </div>
                 </section>
             </main>
         </div>
-
+        <!-- start footer -->
         <footer class="footer">
             <div class="container-fluid h-100">
                 <div class= "row h-100">
@@ -67,6 +71,8 @@
             <!-- end footer row 1 -->
             </div>
         </footer>
+        <!-- end footer -->
+
         <!-- jQuery CDN -->
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

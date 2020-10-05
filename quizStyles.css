@@ -1,5 +1,6 @@
 /* ------  Global Styles ------ */
 :root {
+    /* defines the colors of the variables */
     --backgroundColor-default: #50514f;
     --backgroundColor-incorrect: #e71d36;
     --backgroundColor-correct: #399e5a;
@@ -8,13 +9,16 @@ nav {
     background-color: #d4d0c4;
 }
 body {
+    /* sets the background color variable */
     --backgroundColor: var(--backgroundColor-default);
+    /* uses variable to set the background */
     background-color: var(--backgroundColor-default);
-    background-color: #50514f;
 }
+/* class to assign button if answered correctly */
 body.correct {
     background-color: var(--backgroundColor-correct);
 }
+/* class to assign button if answered incorrectly */
 body.incorrect {
     background-color: var(--backgroundColor-incorrect);
 }
@@ -25,14 +29,13 @@ body.incorrect {
 .btn:hover {
     border-color: black;
 }
-
+/* class to assign button if answered incorrectly */
 .btn.incorrect {
     background-color: var(--backgroundColor-incorrect);
 }
-
+/* class to assign button if answered correctly */
 .btn.correct {
     background-color: var(--backgroundColor-correct);
-    /* background-color: green; */
 }
 
 .hide {

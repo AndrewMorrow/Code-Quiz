@@ -14,7 +14,9 @@
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossorigin="anonymous"
         />
+        <!-- css stylesheet -->
         <link rel="stylesheet" href="highScores.css" />
+        <!-- font awesome cdn -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 
 
@@ -28,23 +30,27 @@
                 <a class="navbar-brand" href="index.html">Play Again</a>
             </nav>
         </div>
-
+        <!-- container to wrap the content -->
         <div class="container-wrap">
             <main>
                 <section class="row">
                     <div class="col d-flex justify-content-center">
+                        <!-- start jumbotron -->
                         <div class="jumbotron text-center">
                             <h1 id="final-score"><i class="fas fa-chess-king"></i> Leaderboard <i class="fas fa-chess-queen"></i></h1>
                             <hr class="my-4" />
+                            <!-- this will hold the highscores -->
                             <div id="score-container">
                                 <ul id="high-scores-list" class= ""></ul>
                             </div>
                         </div>
+                        <!-- end jumbotron -->
                     </div>
                 </section>
             </main>
         </div>
 
+        <!-- start footer -->
         <footer class="footer">
             <div class="container-fluid h-100">
                 <div class= "row h-100">
@@ -55,6 +61,8 @@
             <!-- end footer row 1 -->
             </div>
         </footer>
+        <!-- end footer -->
+
         <!-- jQuery CDN -->
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
