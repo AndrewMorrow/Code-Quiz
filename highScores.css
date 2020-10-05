@@ -9,3 +9,12 @@ body {
 .jumbotron {
     background-color: #d4d0c4;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #d4d0c4;
+    border-top: solid black;
+    color: black;
+}
