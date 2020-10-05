@@ -9,6 +9,10 @@ body {
 .jumbotron {
     background-color: #d4d0c4;
 }
+ul {
+    margin: 0;
+    padding: 0;
+}
 .footer {
     position: fixed;
     bottom: 0;
