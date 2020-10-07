@@ -13,3 +13,17 @@ Your score will be equal to the amount of time you have on the timer at the end 
 Good Luck and try and get on the leaderboard!
 
 <!-- screenshot of website here -->
+
+link to github pages: https://andrewmorrow.github.io/Code-Quiz/
+
+Main Page
+<img src="assets\codeQuizIndexScreenshot.png">
+
+Quiz Page
+<img src="assets\codeQuizGameScreenshot.png">
+
+Save Score Page
+<img src="assets\codeQuizSaveScoreScreenshot.png">
+
+Highscores Page
+<img src="assets\codeQuizHighscoresScreenshot.png">
